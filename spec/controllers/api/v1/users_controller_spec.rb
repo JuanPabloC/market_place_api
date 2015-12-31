@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Api::V1::UsersController do
-  before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}" }
-
   describe "GET #show" do
     before(:each) do
       @user = FactoryGirl.create :user
@@ -18,7 +16,6 @@ describe Api::V1::UsersController do
   end
 
   describe "POST #create" do
-
     context "when is successfully created" do
       before(:each) do
         @user_attributes = FactoryGirl.attributes_for :user
